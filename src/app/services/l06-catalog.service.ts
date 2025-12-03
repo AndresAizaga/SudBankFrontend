@@ -35,6 +35,7 @@ export interface L06DetailsDto {
     codigoTipoIdentificacionCustodio: number;
 } */
 
+
 export interface L06Resume {
     id: number
     codigoTipoIdentificacion: number;
