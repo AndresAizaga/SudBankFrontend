@@ -55,13 +55,19 @@ export class L06CatalogService {
     constructor(private http: HttpClient) { }
 
     getResume(): Observable<L06Resume[]> {
-        return this.http.get<L06Resume[]>(`${this.baseUrl}/structures/l06/resume`)
-            .pipe(catchError(error => {
-                console.error('Error al obtener Tabla 6 desde API real:', error);
-                throw error;
-            }))
-    }
-    saveL06(form: any): void {
-        const formValue = form;
+        return this.http.get<L06Resume[]>(`${this.baseUrl}/structures/L02/resume`)
+            .pipe(
+                catchError(error => {
+                    console.error('Error al obtener L02 resume desde API real:', error);
+                    // Fallback: intentar con endpoint alternativo
+                    return this.http.get<L06Resume[]>(`${this.baseUrl}/structures/L06`)
+                        .pipe(
+                            catchError(fallbackError => {
+                                console.error('Error en fallback L06:', fallbackError);
+                                throw fallbackError;
+                            })
+                        );
+                })
+            );
     }
 }

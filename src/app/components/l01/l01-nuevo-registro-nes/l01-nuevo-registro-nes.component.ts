@@ -26,7 +26,7 @@ export class L01NuevoRegistroNesComponent implements OnInit {
   emisoresFiltrados: any[] = [];
   l01Form: FormGroup;
   formSubmitted = false;
-  
+
   // Mensajes de feedback
   showMessage = false;
   messageType: 'success' | 'error' = 'success';
@@ -69,7 +69,7 @@ export class L01NuevoRegistroNesComponent implements OnInit {
       this.isSubmitting = true;
       const formData = this.l01Form.value;
       console.log('📌 Form Data:', formData);
-      
+
       this.l01CatalogService.saveL01(formData).subscribe({
         next: (response) => {
           console.log('✅ Registro guardado exitosamente:', response);
@@ -77,7 +77,7 @@ export class L01NuevoRegistroNesComponent implements OnInit {
           this.l01Form.reset();
           this.formSubmitted = false;
           this.isSubmitting = false;
-          
+
           // Cerrar modal después de 2 segundos
           setTimeout(() => {
             this.isVisible = false;
@@ -87,9 +87,9 @@ export class L01NuevoRegistroNesComponent implements OnInit {
         error: (error) => {
           console.error('❌ Error al guardar registro:', error);
           this.isSubmitting = false;
-          
+
           let errorMessage = 'Error desconocido al guardar el registro';
-          
+
           if (error.status === 403) {
             errorMessage = 'Error 403: No tiene permisos para guardar registros. Contacte al administrador.';
           } else if (error.status === 400) {
@@ -101,7 +101,7 @@ export class L01NuevoRegistroNesComponent implements OnInit {
           } else if (error.error && error.error.message) {
             errorMessage = `Error: ${error.error.message}`;
           }
-          
+
           this.showErrorMessage(errorMessage);
         }
       });

@@ -60,12 +60,13 @@ export class L06MainComponent {
 
 
   ngOnInit(): void {
-    this.loadResume();
+    // this.loadResume();
   }
+
+
 
   openModal(): void {
     this.showModalForm = true;
-    console.log('this.showModalForm: ', this.showModalForm);
   }
 
   onModalClosed(): void {

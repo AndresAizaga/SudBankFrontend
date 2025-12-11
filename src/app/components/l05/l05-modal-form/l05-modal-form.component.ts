@@ -29,7 +29,7 @@ export class L05ModalFormComponent implements OnInit {
   l05Form: FormGroup;
   formSubmitted = false;
 
-  constructor(private fb: FormBuilder, 
+  constructor(private fb: FormBuilder,
     private t164service: T164Service,
     private t33Service: T33Service,
     private t172service: T172Service,
@@ -88,7 +88,7 @@ export class L05ModalFormComponent implements OnInit {
     return control?.invalid && (control.touched || this.formSubmitted);
   }
 
-  private loadTipoDeposito(): void{
+  private loadTipoDeposito(): void {
     this.t172service.getAll().subscribe({
       next: (data) => {
         this.arrayTipoDeposito = data;
