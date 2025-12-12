@@ -68,7 +68,7 @@
                         <label class="form-label">Número de título</label>
                         <input type="text" class="form-control" formControlName="numeroTitulo" />
                         <div *ngIf="isInvalid('numeroTitulo')" class="text-danger small mt-1">
-                            Obligatorio
+                            El Número de título es obligatorio
                         </div>
                     </div>
 
@@ -76,7 +76,7 @@
                         <label class="form-label">Fecha de emisión</label>
                         <input type="date" class="form-control" formControlName="fechaEmision" />
                         <div *ngIf="isInvalid('fechaEmision')" class="text-danger small mt-1">
-                            Obligatorio
+                            la fecha de emisión es obligatoria
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                         <label class="form-label">Fecha de compra</label>
                         <input type="date" class="form-control" formControlName="fechaCompra" />
                         <div *ngIf="isInvalid('fechaCompra')" class="text-danger small mt-1">
-                            Obligatoria
+                            La Fecha de compra es obligatoria
                         </div>
                     </div>
 
@@ -95,6 +95,9 @@
                         <select class="form-select" formControlName="estadoOperacion">
                             <option [ngValue]="null" disabled selected>Seleccione un estado</option>
                         </select>
+                        <div *ngIf="isInvalid('estadoOperacion')" class="text-danger small mt-1">
+                            El estado de operación es obligatoria
+                        </div>
                     </div>
                 </div>
 
@@ -103,6 +106,9 @@
                     <div class="col-md-6">
                         <label class="form-label">Cuenta contable</label>
                         <input type="number" class="form-control" formControlName="cuentaContable" />
+                        <div *ngIf="isInvalid('cuentaContable')" class="text-danger small mt-1">
+                            La cuenta contable es obligatoria
+                        </div>
                     </div>
 
                     <div class="col-md-6">
@@ -110,6 +116,9 @@
                         <select class="form-select" formControlName="tipoOperacion">
                             <option [ngValue]="null" disabled selected>Seleccione un tipo</option>
                         </select>
+                        <div *ngIf="isInvalid('tipoOperacion')" class="text-danger small mt-1">
+                            El tipo de operación es obligatoria
+                        </div>
                     </div>
                 </div>
 
@@ -117,11 +126,17 @@
                     <div class="col-md-6">
                         <label class="form-label">Fecha de operación</label>
                         <input type="date" class="form-control" formControlName="fechaOperacion" />
+                        <div *ngIf="isInvalid('fechaOperacion')" class="text-danger small mt-1">
+                            La fecha de operación es obligatoria
+                        </div>
                     </div>
 
                     <div class="col-md-6">
                         <label class="form-label">Fecha de vencimiento</label>
                         <input type="date" class="form-control" formControlName="fechaVencimientoOperacion" />
+                        <div *ngIf="isInvalid('fechaVencimientoOperacion')" class="text-danger small mt-1">
+                            La fecha de vencimiento es obligatoria
+                        </div>
                     </div>
                 </div>
 
@@ -136,6 +151,9 @@
                             <option *ngFor="let item of tiposIdentificacionContraparte" [ngValue]="item">{{
                                 item.descripcion }}</option>
                         </select>
+                        <div *ngIf="isInvalid('tipoIdentificacionContraparte')" class="text-danger small mt-1">
+                            El tipo de identificación es obligatoria
+                        </div>
                     </div>
 
                     <div class="col-md-6">
@@ -145,6 +163,9 @@
                             <option *ngFor="let item of identificacionContraparte" [ngValue]="item">{{ item.descripcion
                                 }}</option>
                         </select>
+                        <div *ngIf="isInvalid('identificacionContraparte')" class="text-danger small mt-1">
+                            La identificación de la contralarte es obligatoria
+                        </div>
                     </div>
                 </div>
 
@@ -159,11 +180,17 @@
                             <option *ngFor="let item of monedaDenominacion" [ngValue]="item">{{ item.descripcion }}
                             </option>
                         </select>
+                        <div *ngIf="isInvalid('moneda')" class="text-danger small mt-1">
+                            La moneda es obligatoria
+                        </div>
                     </div>
 
                     <div class="col-md-6">
                         <label class="form-label">Monto negociado</label>
                         <input type="number" class="form-control" formControlName="montoNegociado" />
+                        <div *ngIf="isInvalid('montoNegociado')" class="text-danger small mt-1">
+                            El monto negociado es obligatoria
+                        </div>
                     </div>
                 </div>
 
@@ -171,11 +198,17 @@
                     <div class="col-md-6">
                         <label class="form-label">Tasa efectiva anual</label>
                         <input type="number" class="form-control" formControlName="tasaEfectivaAnual" />
+                        <div *ngIf="isInvalid('tasaEfectivaAnual')" class="text-danger small mt-1">
+                            La tasa efectiva anual es obligatoria
+                        </div>
                     </div>
 
                     <div class="col-md-6">
                         <label class="form-label">Valor nominal (USD)</label>
                         <input type="number" class="form-control" formControlName="valorNominalDolares" />
+                        <div *ngIf="isInvalid('valorNominalDolares')" class="text-danger small mt-1">
+                            El valor nominal es obligatoria
+                        </div>
                     </div>
                 </div>
 
@@ -183,6 +216,9 @@
                     <div class="col-md-6">
                         <label class="form-label">Valor de mercado (USD)</label>
                         <input type="number" class="form-control" formControlName="valorMercadoDolares" />
+                        <div *ngIf="isInvalid('valorMercadoDolares')" class="text-danger small mt-1">
+                            El valor de mercado es obligatoria
+                        </div>
                     </div>
 
                     <div class="col-md-6">
@@ -192,6 +228,9 @@
                             <option *ngFor="let item of categoriaCalificacion" [ngValue]="item">{{ item.descripcion }}
                             </option>
                         </select>
+                        <div *ngIf="isInvalid('categoriaCalificacion')" class="text-danger small mt-1">
+                            La categoría de calificación es obligatoria
+                        </div>
                     </div>
                 </div>
 
@@ -202,7 +241,11 @@
                             <option [ngValue]="null" disabled selected>Seleccione</option>
                             <option *ngFor="let item of calificacionRiesgo" [ngValue]="item">{{ item.descripcion }}
                             </option>
+
                         </select>
+                        <div *ngIf="isInvalid('codigoCalificacionRiesgo')" class="text-danger small mt-1">
+                            La calificación de riesgo es obligatoria
+                        </div>
                     </div>
 
                     <div class="col-md-6">
@@ -212,6 +255,9 @@
                             <option *ngFor="let item of tipoIdentificacionCustodio" [ngValue]="item">{{ item.descripcion
                                 }}</option>
                         </select>
+                        <div *ngIf="isInvalid('codigoTipoIdentificacionCustodio')" class="text-danger small mt-1">
+                            El tipo Identificación Custodio es obligatoria
+                        </div>
                     </div>
                 </div>
 
@@ -223,6 +269,9 @@
                             <option *ngFor="let item of identificacionCustodio" [ngValue]="item">{{ item.descripcion }}
                             </option>
                         </select>
+                        <div *ngIf="isInvalid('codigoIdentificacionCustodio')" class="text-danger small mt-1">
+                            La Identificación Custodio es obligatoria
+                        </div>
                     </div>
                 </div>
 

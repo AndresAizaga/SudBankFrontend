@@ -63,7 +63,9 @@ export class L06MainComponent {
     // this.loadResume();
   }
 
-
+  showAddEmitterModal(): void {
+    this.showEmitterModal = true;
+  }
 
   openModal(): void {
     this.showModalForm = true;
